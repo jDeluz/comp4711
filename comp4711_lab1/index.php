@@ -7,15 +7,10 @@
 <body>
 
 <?php
-    $temp = 'Jon';
-    echo 'Hi, my name is ';
-    echo $temp;
-    $temp = 'geek ';
-    echo ' I am a';
-    echo $temp;
-    $temp = 10;
-    echo 'My Level is ';
-    echo $temp;
+    $name = 'Jon';
+    $what = 'geek';
+    $level = 10;
+    echo 'Hi, my name is ' . $name ,', and I am a level ' . $level . ' ' . $what;
 ?>
 
 </body>
