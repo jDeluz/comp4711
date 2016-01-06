@@ -7,7 +7,15 @@
 <body>
 
 <?php
-    echo "hello world";
+    $temp = 'Jon';
+    echo 'Hi, my name is ';
+    echo $temp;
+    $temp = 'geek ';
+    echo ' I am a';
+    echo $temp;
+    $temp = 10;
+    echo 'My Level is ';
+    echo $temp;
 ?>
 
 </body>
