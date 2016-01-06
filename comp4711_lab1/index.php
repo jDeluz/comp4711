@@ -15,7 +15,7 @@
     echo '<br/>';
 
     //PHP Expressions
-    $hoursworked = 10;
+    $hoursworked = $_GET['hours']; //Changed from 10 to $_GET
     $rate = 12;
     $total = $hoursworked * $rate;
     //echo 'You owe me $' . $total;
