@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be519192-de76-4762-ae6f-8f8a13dc148b" name="Default" comment="PHP Operators - Demonstrated better naming practice and dynamic typing.">
+    <list default="true" id="be519192-de76-4762-ae6f-8f8a13dc148b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
@@ -28,8 +28,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23577906">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.27205276">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -177,7 +177,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452104492945</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="PHP Expressions - Demonstrated use of Expressions.">
+      <created>1452104697177</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1452104697177</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -210,7 +216,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="PHP Strings - Playing around with variables and strings." />
     <MESSAGE value="PHP Operators - Demonstrated better naming practice and dynamic typing." />
-    <option name="LAST_COMMIT_MESSAGE" value="PHP Operators - Demonstrated better naming practice and dynamic typing." />
+    <MESSAGE value="PHP Expressions - Demonstrated use of Expressions." />
+    <option name="LAST_COMMIT_MESSAGE" value="PHP Expressions - Demonstrated use of Expressions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -219,8 +226,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23577906">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.27205276">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
