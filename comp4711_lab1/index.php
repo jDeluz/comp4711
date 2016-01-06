@@ -57,15 +57,45 @@
     }
 
     echo '<br/>';
+    $game = new Game($squares);
+
     if(!isset($_GET['board'])){
         echo 'No board found';
     } else {
-        if (winner('x', $squares)) {
-            echo 'X win.';
-        } else if (winner('o', $squares)) {
-            echo 'O wins';
+        if ($game->winner('x')) {
+            echo 'You win. Lucky guesses!';
+        } else if ($game->winner('o')) {
+            echo 'I win. Muahahahahaahaa';
         } else
-            echo 'No winner yet';
+            echo 'No winner yet, but you are losing.';
+    }
+
+    class Game{
+        var $position;
+        function __construct($squares){
+            $this->position = $squares;
+        }
+        function winner($token){
+            if((($this->position[0] == $token) && ($this->position[4] == $token) && ($this->position[8] == $token))
+                ||(($this->position[2] == $token) && ($this->position[4] == $token) && ($this->position[6] == $token))){
+                return true;
+            }
+            for($row = 0; $row < 3; $row++){
+                if((($this->position[3 * $row]) == $token) &&
+                    (($this->position[3 * $row + 1]) == $token) &&
+                    (($this->position[3 * $row + 2]) == $token)){
+                    return true;
+                }
+            }
+            for($col = 0; $col < 3; $col++){
+                if((($this->position[3 * $col]) == $token) &&
+                    (($this->position[3 * $col + 3]) == $token) &&
+                    (($this->position[3 * $col + 6]) == $token)){
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
 ?>
