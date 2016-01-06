@@ -28,8 +28,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.16075845">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.27452597">
+              <caret line="34" column="93" selection-start-line="34" selection-start-column="93" selection-end-line="34" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -195,7 +195,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452105121109</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="PHP Functions - Made a Tic Tac Toe game, using php functions.">
+      <created>1452106430881</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1452106430881</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -231,7 +237,8 @@
     <MESSAGE value="PHP Expressions - Demonstrated use of Expressions." />
     <MESSAGE value="PHP Selection - If statements and ternary operator." />
     <MESSAGE value="PHP Input - Implemented $_GET to get parameters for the url." />
-    <option name="LAST_COMMIT_MESSAGE" value="PHP Input - Implemented $_GET to get parameters for the url." />
+    <MESSAGE value="PHP Functions - Made a Tic Tac Toe game, using php functions." />
+    <option name="LAST_COMMIT_MESSAGE" value="PHP Functions - Made a Tic Tac Toe game, using php functions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -240,8 +247,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.16075845">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.27452597">
+          <caret line="34" column="93" selection-start-line="34" selection-start-column="93" selection-end-line="34" selection-end-column="93" />
           <folding />
         </state>
       </provider>

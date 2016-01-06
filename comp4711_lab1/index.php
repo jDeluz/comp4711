@@ -32,43 +32,28 @@
     $position = $_GET['board'];
     $squares = str_split($position); //array of moves
 
+    //Changed old winner function by replacing the 9 If statements with 2 for loops and 1 if statement.
     function winner($token, $position){
-        $won = false;
-        if(($position[0] == $token) &&
-           ($position[1] == $token) &&
-           ($position[2] == $token)){
-            $won = true;
-        } else if(($position[4] == $token) &&
-            ($position[5] == $token) &&
-            ($position[6] == $token)) {
-            $won = true;
-        } else if(($position[7] == $token) &&
-            ($position[8] == $token) &&
-            ($position[9] == $token)) {
-            $won = true;
-        } else if(($position[0] == $token) &&
-            ($position[4] == $token) &&
-            ($position[7] == $token)) {
-            $won = true;
-        } else if(($position[1] == $token) &&
-            ($position[5] == $token) &&
-            ($position[8] == $token)) {
-            $won = true;
-        } else if(($position[3] == $token) &&
-            ($position[6] == $token) &&
-            ($position[9] == $token)) {
-            $won = true;
-        } else if(($position[0] == $token) &&
-            ($position[5] == $token) &&
-            ($position[9] == $token)) {
-            $won = true;
+        if((($position[0] == $token) && ($position[4] == $token) && ($position[8] == $token))
+         ||(($position[2] == $token) && ($position[4] == $token) && ($position[6] == $token))){
+            return true;
         }
-        else if(($position[3] == $token) &&
-            ($position[5] == $token) &&
-            ($position[7] == $token)) {
-            $won = true;
+        for($row = 0; $row < 3; $row++){
+            if((($position[3 * $row]) == $token) &&
+               (($position[3 * $row + 1]) == $token) &&
+               (($position[3 * $row + 2]) == $token)){
+                return true;
+            }
         }
-    return $won;
+        for($col = 0; $col < 3; $col++){
+            if((($position[3 * $col]) == $token) &&
+                (($position[3 * $col + 3]) == $token) &&
+                (($position[3 * $col + 6]) == $token)){
+                return true;
+            }
+        }
+
+    return false;
     }
 
     echo '<br/>';
