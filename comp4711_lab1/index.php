@@ -33,6 +33,7 @@
     $squares = str_split($position); //array of moves
 
     //Changed old winner function by replacing the 9 If statements with 2 for loops and 1 if statement.
+    /*
     function winner($token, $position){
         if((($position[0] == $token) && ($position[4] == $token) && ($position[8] == $token))
          ||(($position[2] == $token) && ($position[4] == $token) && ($position[6] == $token))){
@@ -55,10 +56,11 @@
 
     return false;
     }
+    */
 
     echo '<br/>';
     $game = new Game($squares);
-
+    $game->display();
     if(!isset($_GET['board'])){
         echo 'No board found';
     } else {
@@ -72,6 +74,7 @@
 
     class Game{
         var $position;
+        var $newposition;
         function __construct($squares){
             $this->position = $squares;
         }
@@ -96,7 +99,34 @@
             }
             return false;
         }
+
+        function display(){
+            echo '<table cols="3" style="font-size:large; font-weight:bold">';
+            echo '<tr>';
+            for ($pos = 0; $pos < 9; $pos++){
+                //echo '<td>-</td>';
+                echo $this->show_cell($pos);
+                if($pos % 3 == 2)
+                    echo '</tr><tr>';
+            }
+            echo '</tr>';
+            echo '</table>';
+        }
+
+        function show_cell($which){
+            $token = $this->position[$which];
+            if($token <> '-')
+                return '<td>' . $token . '</td>';
+
+            $this->newposition = $this->position;
+            $this->newposition[$which] = 'o';
+            $move = implode($this->newposition);
+
+            $link = '?board=' . $move;
+            return '<td><a href="' . $link . '">-</a></td>';
+        }
     }
+
 
 ?>
 
