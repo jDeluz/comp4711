@@ -60,17 +60,21 @@
 
     echo '<br/>';
     $game = new Game($squares);
-    $game->display();
-    if(!isset($_GET['board'])){
-        echo 'No board found';
-    } else {
+
         if ($game->winner('x')) {
             echo 'You win. Lucky guesses!';
         } else if ($game->winner('o')) {
             echo 'I win. Muahahahahaahaa';
-        } else
+        } else {
             echo 'No winner yet, but you are losing.';
-    }
+            $game->pick_move();
+            if ($game->winner('o')) {
+                echo 'I win. Muahahahahaahaa';
+            } else {
+                $game->display();
+            }
+        }
+
 
     class Game{
         var $position;
@@ -91,11 +95,12 @@
                 }
             }
             for($col = 0; $col < 3; $col++){
-                if((($this->position[3 * $col]) == $token) &&
-                    (($this->position[3 * $col + 3]) == $token) &&
-                    (($this->position[3 * $col + 6]) == $token)){
+                if((($this->position[$col]) == $token) &&
+                    (($this->position[$col + 3]) == $token) &&
+                    (($this->position[$col + 6]) == $token)){
                     return true;
                 }
+
             }
             return false;
         }
@@ -119,11 +124,25 @@
                 return '<td>' . $token . '</td>';
 
             $this->newposition = $this->position;
-            $this->newposition[$which] = 'o';
+            $this->newposition[$which] = 'x';
             $move = implode($this->newposition);
 
             $link = '?board=' . $move;
             return '<td><a href="' . $link . '">-</a></td>';
+        }
+
+        function pick_move(){
+            $board = null;
+            if(strcmp(implode($this->position),'---------') != 0) {
+                $this->newposition = $this->position;
+                for ($i = 0, $j = 0; $i < sizeof($this->position); $i++)
+                    if ($this->position[$i] == '-')
+                        $board[$j++] = $i;
+                if(sizeof($board) > 1) {
+                    $this->newposition[$board[array_rand($board, 1)]] = 'o';
+                    $this->position = $this->newposition;
+                }
+            }
         }
     }
 
