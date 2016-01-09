@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Week 1 - Lab 1</title>
 </head>
 <body>
 
@@ -27,10 +27,8 @@
         $total = $hoursworked * $rate;
     }
     echo ($total > 0) ? 'You owe me '. $total : "You're welcome";
+    echo '<br/>';
 
-    //PHP Functions - Tic Tac Toe
-    $position = $_GET['board'];
-    $squares = str_split($position); //array of moves
 
     //Changed old winner function by replacing the 9 If statements with 2 for loops and 1 if statement.
     /*
@@ -58,22 +56,29 @@
     }
     */
 
-    echo '<br/>';
+    //PHP Functions - Tic Tac Toe
+    if(!isset($_GET['board']))
+        $position = "---------";
+    else
+        $position = $_GET['board'];
+
+    $squares = str_split($position); //array of moves
     $game = new Game($squares);
 
-        if ($game->winner('x')) {
-            echo 'You win. Lucky guesses!';
-        } else if ($game->winner('o')) {
-            echo 'I win. Muahahahahaahaa';
-        } else {
-            echo 'No winner yet, but you are losing.';
-            $game->pick_move();
-            if ($game->winner('o')) {
-                echo 'I win. Muahahahahaahaa';
-            } else {
-                $game->display();
-            }
-        }
+    //Win conditions
+     if ($game->winner('x')) {  //check for player win
+         echo 'You win. Lucky guesses!';
+     } else if ($game->winner('o')) {   //check for ai win
+         echo 'I win. Muahahahahaahaa';
+     } else {
+         echo 'No winner yet, but you are losing.';
+         $game->pick_move();        //ai move
+         if ($game->winner('o')) {  //check if ai has won
+             echo 'I win. Muahahahahaahaa';
+         } else {
+             $game->display();  //player move
+         }
+     }
 
 
     class Game{
@@ -87,14 +92,14 @@
                 ||(($this->position[2] == $token) && ($this->position[4] == $token) && ($this->position[6] == $token))){
                 return true;
             }
-            for($row = 0; $row < 3; $row++){
+            for($row = 0; $row < 3; $row++){ //Loop through each row
                 if((($this->position[3 * $row]) == $token) &&
                     (($this->position[3 * $row + 1]) == $token) &&
                     (($this->position[3 * $row + 2]) == $token)){
                     return true;
                 }
             }
-            for($col = 0; $col < 3; $col++){
+            for($col = 0; $col < 3; $col++){ //Loop through each col
                 if((($this->position[$col]) == $token) &&
                     (($this->position[$col + 3]) == $token) &&
                     (($this->position[$col + 6]) == $token)){
@@ -133,20 +138,18 @@
 
         function pick_move(){
             $board = null;
-            if(strcmp(implode($this->position),'---------') != 0) {
+            if(strcmp(implode($this->position),'---------') != 0) { //check for empty board
                 $this->newposition = $this->position;
-                for ($i = 0, $j = 0; $i < sizeof($this->position); $i++)
+                for ($i = 0, $j = 0; $i < sizeof($this->position); $i++) //Loop through board for empty spots
                     if ($this->position[$i] == '-')
-                        $board[$j++] = $i;
+                        $board[$j++] = $i; //array for empty spots for ai to select
                 if(sizeof($board) > 1) {
-                    $this->newposition[$board[array_rand($board, 1)]] = 'o';
+                    $this->newposition[$board[array_rand($board, 1)]] = 'o'; //Random spot chosen from the array above
                     $this->position = $this->newposition;
                 }
             }
         }
     }
-
-
 ?>
 
 </body>
